@@ -1,11 +1,11 @@
 .main{
 	border: 1px solid gray;
 	position: absolute;
-	width: 70%;
+	width: 90%;
 	height: 96%;
 	top: 2%;
 	display: inline-block;
-	left: 15%;
+	left: 5%;
 	border-radius: 5px;
 	box-shadow: 5px 9px 10px -3px rgba(0,0,0,0.5);
 	background: white;
@@ -42,11 +42,12 @@ span.navbar-text.text-desc{
 }
 .body-page{
 	overflow: auto;
-    width: 69.8%;
-    height: 87%;
+	width: 89.8%;    
+	height: 87%;
     /*padding: 0 20px;*/
     position: fixed;
 	top: 70px;
+	background: linear-gradient(180deg, cornflowerblue, ghostwhite);
 	/* padding: 1rem 0; */
 }
 .row{
@@ -96,4 +97,24 @@ span.navbar-text.text-desc{
 	width: inherit;
     top: 55px;
     height: 91.5%;
+}
+
+.card{
+	box-shadow: 1px 1px 5px -1px grey;
+}
+
+.footer-page{
+	margin-top: 100px;
+	background: white;
+	padding: 20px 10px;
+}
+.footer-page .footer-text{
+	font-family: monospace;
+}
+
+.bold{
+	font-weight: bold;
+}
+.italic{
+	font-style: italic;
 }

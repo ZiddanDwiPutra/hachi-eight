@@ -1,6 +1,6 @@
 function Router(){
     var menus = [
-        {componentUrl: "./src/component/LandingDescription.html", name: "Hachi Eight Production", path: ""},
+        {componentUrl: "./src/component/LandingDescription.html", name: "Home", path: ""},
         {componentUrl: "./src/component/QuestionForm.html", name: "Question Form", path: "question"},
     ];
     return {
@@ -29,6 +29,8 @@ function Router(){
                     selectEl(".HE-TITLE").innerHTML = "";
                     selectEl(".body-page").innerHTML = "<div import-file='./src/component/ErrorPage.html'></div> "
                 }
+                selectEl(".body-page").innerHTML += "<div import-file='./src/component/Footer.html'></div> "
+
                 includeHTML();
                 this.curentPath = path;
             }

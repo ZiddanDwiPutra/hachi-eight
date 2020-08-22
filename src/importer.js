@@ -32,7 +32,7 @@ function includeHTML() {
           }
           /* Remove the attribute, and call this function once more: */
           elmnt.removeAttribute(main.tagImporter);
-          // includeHTML();
+          includeHTML();
 		}
 		
       };
