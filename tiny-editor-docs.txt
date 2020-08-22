@@ -1,0 +1,14 @@
+data-formatblock="no": remove the styles drop down list
+data-bold="no": remove the bold button
+data-italic="no": : remove the italic button
+data-underline="no": remove the underline button
+data-fontname="no": remove the font drop down list
+data-forecolor="no": : remove the text color button
+data-justifyleft="no": remove the left align button
+data-justifycenter="no": remove the center align button
+data-justifyright="no": remove the right align button
+data-insertorderedlist="no": remove the numbered list button
+data-insertunorderedlist="no": remove the bulleted list button
+data-outdent="no": remove the decrease indent button
+data-indent="no": remove the increase indent button
+data-remove-format="no": remove the clear formatting button

@@ -1,0 +1,22 @@
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: cornflowerblue;
+    border-radius: 5px;
+    border-left: 0.5px solid white;
+}
+.overflow{
+    overflow: auto;
+}
+.overflow:hover::-webkit-scrollbar{
+    width: 10px;
+}

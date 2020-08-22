@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="45954ed5-ed85-4f66-96cd-ff951b44495c" kpf_version="5" name="hachi8.komodoproject">
+<preference-set idref="45954ed5-ed85-4f66-96cd-ff951b44495c" id="project" preftype="project">
+  <long id="caretWidth">2</long>
+  <string id="eslint_binary"></string>
+  <string id="eslint_config"></string>
+  <boolean id="genericLinter:PHP">1</boolean>
+  <string relative="path" id="import_dirname"></string>
+  <string id="jshint_linter_chooser">default</string>
+  <string id="last_local_directory">None</string>
+  <string id="last_remote_directory">None</string>
+  <string id="lessDefaultInterpreter">None</string>
+  <boolean id="lint_eslint_enabled">0</boolean>
+  <string id="phpDefaultInterpreter">C:\xampp\php\php.exe</string>
+  <string relative="path" id="phpExtraPaths">server</string>
+  <long id="prefs_version">1</long>
+  <string id="sassDefaultInterpreter">None</string>
+  <string id="scssDefaultInterpreter">None</string>
+</preference-set>
+</project>

@@ -1,0 +1,75 @@
+<div class="QuestionForm row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="card ">
+            <div class="card-header">
+                Contact Us
+            </div>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Contact Us</h5> -->
+              <p class="card-text">
+                <form>
+                    <h2 align="center"></h2>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Email address</label>
+                      <input type="email" class="form-control email" id="exampleFormControlInput1" placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Nick Name</label>
+                        <input type="text" class="form-control name" id="exampleFormControlInput2" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Message</label>
+                      <textarea class="form-control message" id="exampleFormControlTextarea1" rows="3"></textarea>
+					</div>
+					
+                </form>
+                <button type="button" class="btn btn-primary" onclick="QuestionForm.methods.sendFeeds()">Send</button>        
+              </p>
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .QuestionForm{
+        background: linear-gradient(180deg, cornflowerblue, transparent);
+        padding: 35px 5px;
+    }
+</style>
+
+<script>
+
+class QuestionForm{
+	get data(){
+		return{
+
+		}
+	};
+	get methods(){
+		return{
+			sendFeeds(){
+				var data = {
+					name: selectEl('.QuestionForm .name').value,
+					email: selectEl('.QuestionForm .email').value,
+					message: selectEl('.QuestionForm .message').value,
+					date: new Date().getTime()
+				};
+	
+				Api.save(data, response=>{
+					console.log(response);
+				});			
+			}
+		}
+	}
+}
+window.QuestionForm = new QuestionForm();
+class Api{
+	static save(data, onSuccess){
+		data['_path'] = 'feeds';
+		data['_paramName'] = 'save';
+		POST(main.api, data, onSuccess);
+	}
+}
+</script>
