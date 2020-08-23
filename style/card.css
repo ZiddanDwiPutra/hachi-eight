@@ -1,0 +1,53 @@
+.card-body{
+    z-index: 2;
+}
+.card-type-1{
+    width: 100%;
+    min-height: 200px;
+    border: none;
+}
+.card-type-1 .half-box{
+    background: skyblue;
+    display: inline-block;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    right: 0;
+    border-radius: 100px 0 0 100px;
+}
+
+.card-type-2{
+    width: 100%;
+    min-height: 200px;
+    border: none;
+    background-color: skyblue;
+}
+.card-type-2 .half-box{
+    background: white;
+    display: inline-block;
+    height: 100%;
+    width: 80%;
+    position: absolute;
+    left: 0;
+    border-radius: 0 100px 100px 0;
+}
+
+.card-type-3{
+    width: 100%;
+    min-height: 200px;
+    border: none;
+}
+.card-type-3 .half-box{
+    background: lightgrey;
+    display: inline-block;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    right: 0;
+    border-radius: 500px 0 0 0;
+}
+
+.card-sky-blue{
+    background-color: skyblue;
+    border: none;
+}

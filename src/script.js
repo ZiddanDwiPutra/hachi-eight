@@ -21,6 +21,7 @@ function onloadThis(b){
 }
 
 window.main = {
+	promises: [],
 	tagImporter: "import-file",
 	api: "MainServ.php",
 	router(){
@@ -29,7 +30,7 @@ window.main = {
 		new Router().setPath(hash.replace("#/", ""));
 		onhashchange = (e)=>{
 			var hash = e.target.location.hash;
-			if(hash=="")location.hash = "#/";
+			// if(hash=="")location.hash = "#/";
 			main.loading.active();
 			new Router().setPath(hash.replace("#/", ""));
 		}
@@ -44,18 +45,25 @@ window.main = {
 			$('.loading-view').hide();
 		}
 	},
+	clearActiveNavLink(){
+		var nlist = selectElAll('.head-link-control .nav-link');
+		for(let n of nlist){
+			n.className = n.className.replace(" active", '');
+		}
+	},
 	handleHeadLink(){
 		var navLink = selectElAll('.head-link-control .nav-link');
 		for(let nav of navLink){
 			nav.onclick = (obj)=>{
-				var nlist = selectElAll('.head-link-control .nav-link');
-				for(let n of nlist){
-					n.className = n.className.replace(" active", '');
-				}
+				main.clearActiveNavLink();
 				obj.target.className += " active";
 				selectEl('.head-main .navbar-toggler').click();
 			};
 		}
+	},
+	setNavLink(id){
+		main.clearActiveNavLink();
+		selectEl("#"+id).className += " active";
 	},
 	checkDevice(){
 		let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -86,3 +94,5 @@ window.onload = ()=>{
 		overlayPanel: $('.overlay-panel')
 	}
 }
+
+if(location.hash=="")location.hash = "#/";

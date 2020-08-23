@@ -1,7 +1,7 @@
 function Router(){
     var menus = [
-        {componentUrl: "./src/component/LandingDescription.html", name: "Home", path: ""},
-        {componentUrl: "./src/component/QuestionForm.html", name: "Question Form", path: "question"},
+        {componentUrl: "./src/component/LandingDescription.html", name: "Home", path: "", id: "home_page"},
+        {componentUrl: "./src/component/QuestionForm.html", name: "Question Form", path: "question", id: "contact_us"},
     ];
     return {
         menus: menus,
@@ -15,6 +15,7 @@ function Router(){
         isUpdateStart: false,
         setPath(path){
             if(this.curentPath != path){
+                selectEl(".body-page").innerHTML = "";
                 let findMenu = this.menuList.find(item=>{
                     return item.path == path;
                 });
@@ -23,6 +24,7 @@ function Router(){
                         selectEl('head title').innerHTML = "Hachi Eight | "+findMenu.name;
                         selectEl(".HE-TITLE").innerHTML = findMenu.name;
                         selectEl(".body-page").innerHTML = "<div import-file='"+findMenu.componentUrl+"'></div> ";    
+                        main.setNavLink(findMenu.id);
                     }
                 }else{
                     selectEl('head title').innerHTML = "Hachi Eight | ERROR";
