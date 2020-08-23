@@ -1,0 +1,62 @@
+<div class="page-content IdeaWriter">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="row">
+                <div class="form-group col">
+                    <label for="exampleFormControlInput1">Nick Name</label>
+                    <input type="text" class="form-control name" id="exampleFormControlInput2" placeholder="">
+                </div>
+
+                <div class="form-group col">
+                  <label for="exampleFormControlInput1">Email address</label>
+                  <input type="email" class="form-control email" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                
+                <div class="form-group col-md-12">
+                  <label for="exampleFormControlTextarea1">Idea</label>
+                  <textarea rows="3" class="nic-edit message" name="area3" style="width: 100%; height: 300px;"></textarea>
+                </div> 
+            </form>
+            <button type="button" style="float: right;" class="btn btn-primary" onclick="IdeaWriter.methods.submit()">Submit</button>        
+        </div>
+    </div>
+</div>
+
+<script>
+class IdeaWriter{
+	get data(){
+		return{
+
+		}
+	};
+	get methods(){
+		return{
+			submit(){
+				var data = {
+					name: selectEl('.IdeaWriter .name').value,
+					email: selectEl('.IdeaWriter .email').value,
+                    message: selectEl('.IdeaWriter .message').previousSibling.innerHTML,
+                    type: "IDEA",
+                    privacy: false,
+					date: new Date().getTime()
+				};
+                console.log(data);
+                data.message = atob(data.message);
+	
+				// Api.save(data, response=>{
+				// 	console.log(response);
+				// });			
+			}
+		}
+	}
+}
+window.IdeaWriter = new IdeaWriter();
+class Api{
+    static save(data, onSuccess){
+		data['_path'] = 'feeds';
+		data['_paramName'] = 'save';
+		POST(main.api, data, onSuccess);
+	}
+}
+    nicEditors.allTextAreas();
+</script>

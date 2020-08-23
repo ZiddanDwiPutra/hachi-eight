@@ -50,11 +50,14 @@ span.navbar-text.text-desc{
     /*padding: 0 20px;*/
     position: fixed;
 	top: 76px;
-	background: linear-gradient(180deg, cornflowerblue, ghostwhite);
 	/* padding: 1rem 0; */
+}
+.gradient-page{
+	background: linear-gradient(180deg, cornflowerblue, ghostwhite);
 }
 .page-content{
 	padding: 20px 10px;
+	min-height: 500px;
 }
 .row{
 	margin-left: 0;
@@ -110,7 +113,6 @@ span.navbar-text.text-desc{
 }
 
 .footer-page{
-	margin-top: 100px;
 	background: white;
 	padding: 20px 10px;
 }

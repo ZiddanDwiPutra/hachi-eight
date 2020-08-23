@@ -1,5 +1,9 @@
+.card{
+    height: 100%;
+}
 .card-body{
     z-index: 2;
+    padding-bottom: 50px;
 }
 .card-type-1{
     width: 100%;
@@ -13,7 +17,7 @@
     width: 50%;
     position: absolute;
     right: 0;
-    border-radius: 100px 0 0 100px;
+    border-radius: 200px 0 0 200px;
 }
 
 .card-type-2{
@@ -29,7 +33,7 @@
     width: 80%;
     position: absolute;
     left: 0;
-    border-radius: 0 100px 100px 0;
+    border-radius: 0 200px 200px 0;
 }
 
 .card-type-3{
