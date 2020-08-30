@@ -5,13 +5,14 @@
 		// $dbname = "id7061276_account";
 		
 		public static function connect(){
-			$domain = "localhost";
-// 			$name = "root";
-// 			$password = "";
-// 			$dbname = "hachi_eight";
-			$name = "id7061276_ziddandwiputra21";
-    		$password = "strife123456789";
-    		$dbname = "id7061276_account";
+			// $domain = "localhost";
+			$domain = "localhost:3308";
+			$name = "root";
+			$password = "";
+			$dbname = "hachi_eight";
+			// $name = "id7061276_ziddandwiputra21";
+    		// $password = "strife123456789";
+    		// $dbname = "id7061276_account";
 
 			$connection = mysqli_connect($domain , $name , $password , $dbname);
 			if(!$connection){

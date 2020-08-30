@@ -10,6 +10,10 @@
         }
     }
 
+    function date_millis_to_std_format($milisDate){
+        return date("Y-m-d",$milisDate/1000);
+    };
+
     function writeHTML($text){
         // print($text);
         echo $text;
@@ -30,9 +34,11 @@
     }
 
     $GLOBALS['pathPost'] = array();
+    $GLOBALS['myDatas'] = array();
 
     function addPathPost($id, $object){
         array_push($GLOBALS['pathPost'], array(("obj")=> $object, "id" => $id));
+        array_push($GLOBALS['myDatas'], array(("obj")=> $object, "id" => $id));
     }
 
     function findPostPath($id, $paramName){
@@ -46,5 +52,21 @@
             }
         }
     }
-    
+
+    function stringMaker(string $separator, array $values){
+        $result = "";
+        foreach ($values as $key => $val) {
+            $result = $result.$separator.$val;
+        }
+        return $result;
+    }
+    function createStandarStatus($status, $isSuccess, $message, $response){
+        $obj = new stdClass();
+        $obj->status = $status;
+        $obj->isError = !$isSuccess;
+        $obj->isSuccess = $isSuccess;
+        $obj->message = $message;
+        $obj->response = $response;
+        return json_encode($obj);
+    }
 ?>

@@ -24,6 +24,12 @@ window.main = {
 	promises: [],
 	tagImporter: "import-file",
 	api: "MainServ.php",
+	decodeRichText(value){
+		return decodeURIComponent(escape(window.atob(value)));
+	},
+	encodeRichText(value){
+		return btoa(unescape(encodeURIComponent(value)));
+	},
 	router(){
 		var hash = location.hash;
 		if(hash=="")location.hash = "#/";

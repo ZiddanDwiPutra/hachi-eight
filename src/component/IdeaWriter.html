@@ -33,19 +33,21 @@ class IdeaWriter{
 		return{
 			submit(){
 				var data = {
+                    id: null,
+                    userId: "",
 					name: selectEl('.IdeaWriter .name').value,
 					email: selectEl('.IdeaWriter .email').value,
-                    message: selectEl('.IdeaWriter .message').previousSibling.innerHTML,
-                    type: "IDEA",
+                    messageEncode: selectEl('.IdeaWriter .message').previousSibling.innerHTML,
                     privacy: false,
 					date: new Date().getTime()
 				};
+                data.messageEncode = main.encodeRichText(data.messageEncode);
                 console.log(data);
-                data.message = atob(data.message);
+                // console.log(main.decodeRichText(data.message));
 	
-				// Api.save(data, response=>{
-				// 	console.log(response);
-				// });			
+				Api.save(data, response=>{
+					console.log(response);
+				});			
 			}
 		}
 	}
@@ -53,8 +55,8 @@ class IdeaWriter{
 window.IdeaWriter = new IdeaWriter();
 class Api{
     static save(data, onSuccess){
-		data['_path'] = 'feeds';
-		data['_paramName'] = 'save';
+		data['_path'] = 'ideas';
+		data['_paramName'] = 'sendIdeas';
 		POST(main.api, data, onSuccess);
 	}
 }
