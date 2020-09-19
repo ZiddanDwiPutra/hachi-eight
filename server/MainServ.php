@@ -2,7 +2,7 @@
     include "config.php";
     include "zee.php";
     include "DBData.php";
-    include "DBSetup.php";
+    //include "DBSetup.php";
     includeAll('service');
 
     $postMode = count($_GET) == 0;
