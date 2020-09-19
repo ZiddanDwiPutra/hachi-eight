@@ -1,10 +1,14 @@
 <div class="page-content landing-desc gradient-page">
     <div class="row">
-        <div class="col-md-12">
-            <div class="card">
+        <div class="col-md-12 item-row-1">
+            <div class="card card-type-3">
+                <div class="half-box"></div>
                 <div class="card-body" style="padding: 50px 20px;">
                     <h5 class="card-title" style="font-size: xx-large;">Selamat Datang</h5>
-                    <h6 class="card-subtitle mb-2 text-muted" style="font-size: x-large;"><b>Hachi Eight </b>Hadir Sebagai platform 'Pemikiran Terbuka' di indonesia pertama</h6>
+                    <h6 class="card-subtitle mb-2 text-muted" style="font-size: x-large;">
+                        Tulis Ide Terbaik mu disini dan biarkan seluruh dunia melihat betapa hebat nya ide yang kamu tuliskan.
+                    </h6>
+                    <div class="footage-scene"></div>
                     <!-- <p class="card-text">
                         Mulai untuk menjadi salah satu member kami, untuk ikut ambil bagian dari perubahan generasi di masyarakat indonesia.
                     </p> -->
@@ -30,7 +34,7 @@
                         </label>
                         <br>
                         <button type="button" class="btn btn-info" onclick="location.href = '#/idea-writer'">Write Ideas</button>
-                        <button type="button" class="btn btn-primary"  onclick="location.href = '#/sign-up'">Join</button>
+                        <!-- <button type="button" class="btn btn-primary"  onclick="location.href = '#/sign-up'">Join</button> -->
                     </div>
                 </div>
             </div>
@@ -142,6 +146,24 @@
     </div>
 </div>
 
+<style>
+    .item-row-1{
+        min-height: 545px;
+        padding-bottom: 5px !important;
+    }
+    .footage-scene{
+        text-align: center;
+    }
+    .footage-image{
+        height: 170px;
+        margin: 5px;
+    }
+    .footage-image:hover{
+        filter: brightness(80%);
+    }
+
+</style>
+
 <script>
 class LandingDesc{
     get data(){
@@ -163,6 +185,31 @@ class LandingDesc{
 					console.log(response);
 				});			
             },
+            loopFootage(){
+                let el = selectEl('.footage-scene');
+                let inc = 1;
+                if(main.isMobile){
+                    let src = "./images/footage/ftg3.PNG";
+                    el.innerHTML += "<img style='width:100%;' src='"+src+"' class='footage-image'/>";
+                }else{
+                    let text = [
+                        "","Menulis Ide memberikan manfaat kepada sesama", 
+                        "Memimpikan Sebuah Ideologi dalam sebuah teknologi",
+                        "Tuangkan hari mu dalam meja yang penuh ide inspiratif",
+                        "Huruf huruf nan penuh arti",
+                        "Merencanakan segala hal secara terperinci",
+                        "Bekerja sama kepada orang lain dan berkontribusi penuh",
+                        "Bergerak secara individu memanglah epic tapi berkelompok lebih Epic",
+                        "Berdiskusi dalam mengembangkan sebuah ide baru",
+                        "Mengungkapkan segala keinginan dengan sebuah pena dan pensil"
+                    ];
+                    for(let a of new Array(9)){
+                        let src = "./images/footage/ftg"+inc + ".PNG";
+                        el.innerHTML += "<img title='"+text[inc]+"'' src='"+src+"' class='footage-image'/>";
+                        inc++;
+                    }
+                }
+            },
             fillIdeas(){
                 let el = selectEl(".idea-list");
                 Api.getRecentIdeas(response=>{
@@ -178,6 +225,7 @@ class LandingDesc{
     }
 }
 window.landingDesc = new LandingDesc();
+landingDesc.methods.loopFootage();
 class Api{
     static getRecentIdeas(onSuccess){
         // data['_path'] = 'feeds';

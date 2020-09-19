@@ -1,0 +1,30 @@
+@font-face{
+    font-family: Azonix;
+    src: url("fonts/Azonix.otf");
+}
+
+@font-face{
+    font-family: Neoneon;
+    src: url("fonts/Neoneon.otf");
+}
+
+@font-face{
+    font-family: Alegreya;
+    font-size: 12pt;
+    src: url("fonts/AlegreyaSans-Light.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: AlegreyaThin;
+    src: url("fonts/AlegreyaSans-Thin.ttf") format("truetype"), 
+    url("fonts/AlegreyaSans-ThinItalic.ttf") format("truetype");
+}
+
+*{
+    font-family: Alegreya;
+}
+
+.fa, .fas {
+    font-family: 'Font Awesome 5 Free' !important;
+    font-weight: 900;
+}

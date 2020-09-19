@@ -22,6 +22,7 @@ function onloadThis(b){
 
 window.main = {
 	promises: [],
+	isMobile: false,
 	tagImporter: "import-file",
 	api: "MainServ.php",
 	decodeRichText(value){
@@ -75,12 +76,12 @@ window.main = {
 		let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 		if(isMobile){
 			console.log("Mobile Version");
-			
+			main.isMobile = true;
 			$('.main').addClass('mobile');
 			$('.body-page').addClass('mobile');
 		}else{
 			console.log("Desktop Version");
-			
+			main.isMobile = false;
 		}
 	}
 }
